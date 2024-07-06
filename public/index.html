@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>反代使用说明</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .content {
+            margin-bottom: 20px;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
+        }
+        pre {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Source Code Pro', monospace;
+        }
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            .header {
+                padding: 15px 0;
+            }
+        }
+    </style>
+    <link href="https://fonts.loli.net/css2?family=Roboto:wght@400;700&family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>反代使用说明</h1>
+    </div>
+    <div class="container">
+        <div class="content">
+            <p>为了加速网站访问速度，特提供反代的方式进行访问:</p>
+            <pre><code>请求方式 https://{{host}}/proxy-domian/proxy-path?proxy-querystring</code></pre>
+            <p>为了避免接口乱用，需要添加请求头proxy-token，其格式为 jwt token</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Powered by Cloudflare Workers</p>
+        <p><a href="https://blog.whyun.com" target="_blank">访问博客 blog.whyun.com</a></p>
+    </div>
+    <script>
+        (() => {
+            const host = document.location.hostname;
+            const codes = document.querySelectorAll('code');
+            for (const code of codes) {
+                code.textContent = code.textContent.replaceAll('{{host}}', host);
+            }
+        })();
+    </script>
+</body>
+</html>

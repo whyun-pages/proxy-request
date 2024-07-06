@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "Bundler",
+      "outDir": "functions",
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "types": [
+          "@cloudflare/workers-types",
+          "node"
+      ],
+    },
+    "include": [
+      "src/**/*"
+    ],
+    "lib": [
+      "ESNext"
+    ]
+  }
+  

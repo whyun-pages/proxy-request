@@ -1,0 +1,42 @@
+{
+  "name": "proxy-request",
+  "version": "1.0.0",
+  "description": "proxy request any http request",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "page-dev": "wrangler pages dev public",
+    "build": "tsc",
+    "eslint": "eslint --fix",
+    "gen-token": "env-cmd node test/gen.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whyun-pages/docker-registry.git"
+  },
+  "keywords": [
+    "dockerhub",
+    "cloudflare"
+  ],
+  "author": "yunnysunny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whyun-pages/docker-registry/issues"
+  },
+  "homepage": "https://github.com/whyun-pages/docker-registry#readme",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "@eslint/js": "^9.6.0",
+    "@types/node": "^20.14.10",
+    "env-cmd": "^10.1.0",
+    "eslint": "^9.6.0",
+    "globals": "^15.6.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^7.15.0",
+    "wrangler": "^3.62.0"
+  },
+  "dependencies": {
+    "jose": "^5.6.3"
+  }
+}
