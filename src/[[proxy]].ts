@@ -14,7 +14,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
   const headers = new Headers(request.headers);
   const secret = context.env.PROXY_SECRET;
   if (secret) {
-    const proxyToken = headers.get(HEADER_PROXY_TOKEN);
+    const proxyToken = headers.get(HEADER_PROXY_TOKEN) || url.searchParams?.get(HEADER_PROXY_TOKEN);
     if (!proxyToken) {
       return new Response('NOT ALLOWED', {
         status: 401,
