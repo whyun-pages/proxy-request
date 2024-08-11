@@ -33,6 +33,7 @@ export const onRequest: PagesFunction<Env> = async (context) => {
       });
     }
     headers.delete(HEADER_PROXY_TOKEN);
+    url.searchParams?.delete(HEADER_PROXY_TOKEN);
   }
   const proxyUrl = `${url.protocol}//${proxyDomain}${proxyPath}${url.search}`;
   console.log('proxy url', proxyUrl);
