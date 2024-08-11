@@ -1,6 +1,24 @@
 # docker-registry
 使用 cloudflare pages 反向代理访问任意网址。
 
+## 使用方法
+
+项目部署到 cloudflare 后，假设域名为 xxx.pages.dev，则反代请求 baidu.com 的例子为：
+
+https://xxx.pages.dev/baidu.com
+
+如果你配置了密钥，则需要根据密钥生成一个 jwt token，然后将这个 token 附带到 url 参数或者请求头中。
+
+附带到 url 参数的例子
+
+https://xxx.pages.dev/baidu.com?proxy-token=你的token值
+
+附带到请求头的例子，使用 curl 命令来演示
+
+```shell
+curl -H "proxy-token:你的token值" https://xxx.pages.dev/baidu.com
+```
+
 ## 快速部署
 请将本项目仓库 fork 到自己的 github 仓库，然后在 cloudflare pages 中新建项目来使用。
 1.使用 cloudflare 账号登录其 dashboard 后台，选择 **Workers 和 Pages** 菜单，然后点击 **概述**，接着点击 **创建** 按钮，在打开的页面中选择 Pages 选项卡：
